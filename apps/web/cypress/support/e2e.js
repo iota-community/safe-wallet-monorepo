@@ -23,13 +23,9 @@ import * as ls from './localstorage_data'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-/*
- FIXME: The terms banner is being displayed depending on the cookie banner local storage state.
-  However, in cypress the cookie banner state is evaluated after the banner has been dismissed not before
-  which displays the terms banner even though it shouldn't so we need to globally hide it in our tests.
- */
-const { addCompareSnapshotCommand } = require('cypress-visual-regression/dist/command')
-addCompareSnapshotCommand()
+// Visual regression plugins (Chromatic + Argos) — both are no-ops when their token is absent
+import '@chromatic-com/cypress/support'
+import '@argos-ci/cypress/support'
 
 const beamer = JSON.parse(Cypress.env('BEAMER_DATA_E2E') || '{}')
 const productID = beamer.PRODUCT_ID
@@ -71,6 +67,7 @@ beforeEach(() => {
   cy.clearAllSessionStorage()
   cy.clearLocalStorage()
   cy.clearCookies()
+
   cy.window().then((window) => {
     const getDate = () => new Date().toISOString()
     const beamerKey1 = `_BEAMER_FIRST_VISIT_${productID}`
@@ -89,4 +86,16 @@ beforeEach(() => {
     window.sessionStorage.setItem(outreachWindowKey, Date.now())
     cy.wrap(window.localStorage).invoke('getItem', cookiesKey).should('equal', ls.cookies.acceptedCookies)
   })
+})
+
+// After each visual test, capture Argos screenshot.
+// Chromatic light snapshot is captured automatically by its plugin.
+const argosCSS = '* { scrollbar-width: none !important; } ::-webkit-scrollbar { display: none !important; }'
+
+afterEach(() => {
+  const isVisualTest = Cypress.spec.relative.includes('/visual/')
+  if (!isVisualTest) return
+
+  // capture: 'viewport' avoids full-page scroll stitching which duplicates sticky elements
+  cy.argosScreenshot(Cypress.currentTest.titlePath.join(' > '), { argosCSS, capture: 'viewport' })
 })
