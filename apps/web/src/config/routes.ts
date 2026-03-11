@@ -13,7 +13,7 @@ export const AppRoutes = {
   imprint: '/imprint',
   home: '/home',
   earn: '/earn',
-  cookie: '/cookie',
+  // cookie: '/cookie',
   bridge: '/bridge',
   addressBook: '/address-book',
   hypernative: {
@@ -45,7 +45,7 @@ export const AppRoutes = {
     index: '/settings',
     environmentVariables: '/settings/environment-variables',
     data: '/settings/data',
-    cookies: '/settings/cookies',
+    // cookies: '/settings/cookies',
     appearance: '/settings/appearance',
     safeApps: {
       index: '/settings/safe-apps',

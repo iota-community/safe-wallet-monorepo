@@ -79,9 +79,9 @@ const Footer: React.FC<FooterProps> = ({
             <li>
               <FooterLink href={getHref(AppRoutes.imprint)}>Imprint</FooterLink>
             </li>
-            <li>
+            {/* <li>
               <FooterLink href={getHref(AppRoutes.cookie)}>Cookie policy</FooterLink>
-            </li>
+            </li> */}
             {preferences && (
               <li>
                 <FooterLink href={getHref(AppRoutes.settings.index)}>Preferences</FooterLink>
