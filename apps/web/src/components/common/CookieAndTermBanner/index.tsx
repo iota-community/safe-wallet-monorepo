@@ -11,7 +11,7 @@ import {
   saveCookieAndTermConsent,
   hasAcceptedTerms,
 } from '@/store/cookiesAndTermsSlice'
-import { selectCookieBanner, openCookieBanner, closeCookieBanner } from '@/store/popupSlice'
+import { selectCookieBanner, /*openCookieBanner,*/ closeCookieBanner } from '@/store/popupSlice'
 
 import css from './styles.module.css'
 import { AppRoutes } from '@/config/routes'
@@ -91,11 +91,29 @@ const CookieBannerPopup = (): ReactElement | null => {
 
   useEffect(() => {
     if (shouldOpen) {
-      dispatch(openCookieBanner({}))
+      // dispatch(openCookieBanner({}))
+      autoAccept()
     } else {
       dispatch(closeCookieBanner())
     }
   }, [dispatch, shouldOpen])
+
+  const autoAccept = () => {
+    const values = {
+      [CookieAndTermType.TERMS]: true,
+      [CookieAndTermType.NECESSARY]: true,
+      [CookieAndTermType.UPDATES]: false,
+      [CookieAndTermType.ANALYTICS]: false,
+    }
+
+    dispatch(
+      saveCookieAndTermConsent({
+        ...values,
+        termsVersion: metadata.version,
+      }),
+    )
+    dispatch(closeCookieBanner())
+  }
 
   return cookiePopup.open ? (
     <div className={css.popup}>
