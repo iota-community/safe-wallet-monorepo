@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { mswLoader } from 'msw-storybook-addon'
 import { createMockStory } from '@/stories/mocks'
-import CookiesSettings from '@/pages/settings/cookies'
+import CookiesSettings from '@/pages/settings/cookies-removed'
 
 /**
  * Settings Cookies page - manage cookie preferences.

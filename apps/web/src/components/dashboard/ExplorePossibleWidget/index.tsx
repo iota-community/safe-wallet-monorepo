@@ -52,15 +52,15 @@ const EXPLORE_POSSIBLE_CONFIG = [
       query: { safe: safeQuery },
     }),
   },
-  {
-    id: 'spaces',
-    title: 'Manage multiple Safes',
-    iconUrl: {
-      light: '/images/explore-possible/spaces-large.svg',
-      dark: '/images/explore-possible/spaces-large-dark.svg',
-    },
-    getLink: () => 'https://app.safe.global/welcome/spaces',
-  },
+  // {
+  //   id: 'spaces',
+  //   title: 'Manage multiple Safes',
+  //   iconUrl: {
+  //     light: '/images/explore-possible/spaces-large.svg',
+  //     dark: '/images/explore-possible/spaces-large-dark.svg',
+  //   },
+  //   getLink: () => 'https://app.safe.global/welcome/spaces',
+  // },
   {
     id: 'transaction-builder',
     title: 'Build custom transactions',
