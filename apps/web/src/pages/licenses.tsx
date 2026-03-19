@@ -19,6 +19,10 @@ const SafeLicenses = () => (
         This page contains a list of attribution notices for third party software that may be contained in portions of
         the {BRAND_NAME}. We thank the open source community for all of their contributions.
       </Typography>
+      <Typography mb={3}>
+        The information on this page is adapted from the Safe{'{'}Wallet{'}'} repository, by Safe Labs GmbH, licensed
+        under the GNU General Public License v3.0.
+      </Typography>
       <Typography variant="h2" mb={2}>
         Android
       </Typography>
