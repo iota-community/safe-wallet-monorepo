@@ -43,6 +43,7 @@ const Footer: React.FC<FooterProps> = ({
   const isOfficialHost = useIsOfficialHost()
   const initialYear = 2025
   const currentYear = new Date().getFullYear()
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const copyrightYear = initialYear === currentYear ? initialYear : `${initialYear}–${currentYear}`
 
   if (!footerPages.some((path) => router.pathname.startsWith(path)) && !forceShow) {
@@ -61,24 +62,23 @@ const Footer: React.FC<FooterProps> = ({
             <li>
               {/* <Typography variant="caption">&copy;{copyrightYear} Safe Labs GmbH</Typography> */}
               <Typography variant="caption">
-                {'Official distribution of Safe{Wallet} on '}
-                <ExternalLink href="https://explorer.evm.iota.org" noIcon>
-                  IOTA
+                <ExternalLink href="https://iotadlt.foundation" noIcon>
+                  Contact
                 </ExternalLink>
               </Typography>
             </li>
             <li>
-              <FooterLink href={getHref(AppRoutes.terms)}>Terms</FooterLink>
+              <FooterLink href={getHref(AppRoutes.terms)}>Terms of Use</FooterLink>
             </li>
             <li>
-              <FooterLink href={getHref(AppRoutes.privacy)}>Privacy</FooterLink>
+              <FooterLink href={getHref(AppRoutes.privacy)}>Privacy Policy</FooterLink>
             </li>
             <li>
               <FooterLink href={getHref(AppRoutes.licenses)}>Licenses</FooterLink>
             </li>
-            <li>
+            {/* <li>
               <FooterLink href={getHref(AppRoutes.imprint)}>Imprint</FooterLink>
-            </li>
+            </li> */}
             {/* <li>
               <FooterLink href={getHref(AppRoutes.cookie)}>Cookie policy</FooterLink>
             </li> */}
@@ -101,7 +101,7 @@ const Footer: React.FC<FooterProps> = ({
 
         <li>
           {/* <ExternalLink href={`${APP_HOMEPAGE}/releases/tag/v${APP_VERSION}`} noIcon> */}
-          <ExternalLink href={`https://github.com/iota-community/safe-wallet-monorepo`} noIcon>
+          <ExternalLink href="https://github.com/iota-community/safe-wallet-monorepo" noIcon>
             {versionIcon && <SvgIcon component={GitHubIcon} inheritViewBox fontSize="inherit" sx={{ mr: 0.5 }} />}v
             {APP_VERSION}
           </ExternalLink>
