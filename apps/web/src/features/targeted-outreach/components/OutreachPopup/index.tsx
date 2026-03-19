@@ -105,10 +105,10 @@ const OutreachPopup = (): ReactElement | null => {
                 <Typography variant="h4" fontWeight={700}>
                   Your voice matters!
                   <br />
-                  Help us improve {'Safe{Wallet}'}.
+                  Help us improve {'IOTAEVM{Wallet}'}.
                 </Typography>
                 <Typography>
-                  In 1 minute, tell us why you use {'Safe{Wallet}'}. Your input will help us create a better, smarter
+                  In 1 minute, tell us why you use {'IOTAEVM{Wallet}'}. Your input will help us create a better, smarter
                   wallet experience for you!
                 </Typography>
                 <Track {...OUTREACH_EVENTS.OPEN_SURVEY}>
