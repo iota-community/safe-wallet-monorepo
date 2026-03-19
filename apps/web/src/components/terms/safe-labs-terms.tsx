@@ -1,3 +1,5 @@
+/* eslint-disable unused-imports/no-unused-vars */
+/* eslint-disable unused-imports/no-unused-imports */
 import { useState } from 'react'
 import {
   Button,
@@ -63,19 +65,19 @@ const SafeLabsTerms = () => {
           <Stack spacing={3}>
             <div className={css.header}>
               <Typography variant="h4" component="h1" className={css.headerTitle} color="text.primary">
-                Welcome to Safe{'{Wallet}'}
+                Welcome to Multisig Manager
                 <br />
-                by Safe Labs
+                on IOTA EVM
               </Typography>
             </div>
             <Card className={css.mainCard} style={{ margin: 0 }}>
               <Stack spacing={2} className={css.cardContent}>
-                <Typography variant="body2">
+                {/* <Typography variant="body2">
                   Starting <strong>October 15, 2025</strong>, Safe Labs GmbH (<strong>&quot;Safe Labs&quot;</strong> or{' '}
                   <strong>&quot;we&quot;</strong>) will offer the interface to your multi-signature wallet:
-                </Typography>
+                </Typography> */}
 
-                <Card variant="outlined" className={css.nestedCard}>
+                {/* <Card variant="outlined" className={css.nestedCard}>
                   <div className={css.nestedCardHeader}>
                     <div className={css.nestedCardHeaderInner}>
                       <SafeLabsLogo className={css.logo} />
@@ -111,22 +113,21 @@ const SafeLabsTerms = () => {
                       ))}
                     </Stack>
                   </div>
-                </Card>
+                </Card> */}
 
                 <Typography variant="body2">
-                  Please review and accept our{' '}
+                  I want to use IOTA EVM Multisig Manager and have read and accepted the{' '}
                   <Link href={AppRoutes.terms} className={css.linkBold}>
-                    Terms & Conditions
+                    Terms of Use
                   </Link>{' '}
-                  to start using your new Safe{'{Wallet}'} by Safe Labs. For information on how we process your personal
-                  data, please read our{' '}
+                  and the{' '}
                   <Link href={AppRoutes.privacy} className={css.linkBold}>
                     Privacy Policy
                   </Link>
                   .
                 </Typography>
 
-                <Card variant="outlined" className={css.checkboxCard}>
+                {/* <Card variant="outlined" className={css.checkboxCard}>
                   <div className={css.checkboxCardOuter}>
                     <div className={css.checkboxCardInner}>
                       <Stack spacing={1}>
@@ -220,13 +221,13 @@ const SafeLabsTerms = () => {
                   will delete your personal data transferred to us. Please ensure to download your personal data
                   beforehand, as you will no longer be able to access your personal data via Safe{'{Wallet}'} as
                   provided by Safe Labs GmbH.
-                </Typography>
+                </Typography> */}
               </Stack>
 
               <div className={css.buttonWrapper}>
                 <Button
                   variant="contained"
-                  disabled={!canAccept}
+                  // disabled={!canAccept}
                   className={css.acceptButton}
                   onClick={handleAcceptAndContinue}
                 >
@@ -235,7 +236,7 @@ const SafeLabsTerms = () => {
               </div>
             </Card>
 
-            <Stack spacing={1} className={css.learnMoreSection}>
+            {/* <Stack spacing={1} className={css.learnMoreSection}>
               <Typography variant="body2" color="text.secondary">
                 Learn more:
               </Typography>
@@ -272,7 +273,7 @@ const SafeLabsTerms = () => {
                   <OpenInNewRounded className={css.externalLinkIcon} />
                 </a>
               </div>
-            </Stack>
+            </Stack> */}
           </Stack>
         </Container>
       </div>
