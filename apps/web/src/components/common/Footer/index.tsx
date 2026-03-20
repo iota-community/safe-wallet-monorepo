@@ -20,6 +20,7 @@ const footerPages = [
   // AppRoutes.cookie,
   AppRoutes.terms,
   AppRoutes.licenses,
+  AppRoutes.contact,
 ]
 
 const FooterLink = ({ children, href }: { children: ReactNode; href: string }): ReactElement => {
@@ -60,12 +61,7 @@ const Footer: React.FC<FooterProps> = ({
         {isOfficialHost ? (
           <>
             <li>
-              {/* <Typography variant="caption">&copy;{copyrightYear} Safe Labs GmbH</Typography> */}
-              <Typography variant="caption">
-                <ExternalLink href="https://iotadlt.foundation" noIcon>
-                  Contact
-                </ExternalLink>
-              </Typography>
+              <FooterLink href={getHref(AppRoutes.contact)}>Contact</FooterLink>
             </li>
             <li>
               <FooterLink href={getHref(AppRoutes.terms)}>Terms of Use</FooterLink>

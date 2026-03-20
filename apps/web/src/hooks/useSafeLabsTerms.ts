@@ -16,6 +16,7 @@ const TERMS_REDIRECT_EXCEPTIONS = [
   AppRoutes.imprint,
   // AppRoutes.cookie,
   AppRoutes.licenses,
+  AppRoutes.contact,
 ]
 
 interface UseSafeLabsTermsReturnType {
