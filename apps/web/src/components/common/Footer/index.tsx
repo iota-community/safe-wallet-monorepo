@@ -56,17 +56,9 @@ const Footer: React.FC<FooterProps> = ({
 
   return (
     <footer className={className}>
-      <ul>
+      <ul style={{ margin: 'auto' }}>
         {isOfficialHost ? (
           <>
-            <li>
-              {/* <Typography variant="caption">&copy;{copyrightYear} Safe Labs GmbH</Typography> */}
-              <Typography variant="caption">
-                <ExternalLink href="https://iotadlt.foundation" noIcon>
-                  Contact
-                </ExternalLink>
-              </Typography>
-            </li>
             <li>
               <FooterLink href={getHref(AppRoutes.terms)}>Terms of Use</FooterLink>
             </li>
@@ -76,12 +68,6 @@ const Footer: React.FC<FooterProps> = ({
             <li>
               <FooterLink href={getHref(AppRoutes.licenses)}>Licenses</FooterLink>
             </li>
-            {/* <li>
-              <FooterLink href={getHref(AppRoutes.imprint)}>Imprint</FooterLink>
-            </li> */}
-            {/* <li>
-              <FooterLink href={getHref(AppRoutes.cookie)}>Cookie policy</FooterLink>
-            </li> */}
             {preferences && (
               <li>
                 <FooterLink href={getHref(AppRoutes.settings.index)}>Preferences</FooterLink>
@@ -100,7 +86,6 @@ const Footer: React.FC<FooterProps> = ({
         )}
 
         <li>
-          {/* <ExternalLink href={`${APP_HOMEPAGE}/releases/tag/v${APP_VERSION}`} noIcon> */}
           <ExternalLink href="https://github.com/iota-community/safe-wallet-monorepo" noIcon>
             {versionIcon && <SvgIcon component={GitHubIcon} inheritViewBox fontSize="inherit" sx={{ mr: 0.5 }} />}v
             {APP_VERSION}
@@ -114,6 +99,17 @@ const Footer: React.FC<FooterProps> = ({
             </ExternalLink>
           </li>
         )}
+
+        <li>
+          <Typography variant="caption" display="block">
+            IOTA Ecosystem DLT Foundation, Office No. 1301 & 1302,
+            <br />
+            Floor 13 Tamouh Tower, Tamouh, Al Reem Island,
+            <br />
+            Abu Dhabi, UAE, contact@iotadlt.foundation
+            <br />
+          </Typography>
+        </li>
       </ul>
     </footer>
   )
